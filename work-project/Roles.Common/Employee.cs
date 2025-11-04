@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace work_project.Roles.Common
+{
+    public abstract class Employee : Person
+    {
+        public string Project { get; set; }
+    }
+}

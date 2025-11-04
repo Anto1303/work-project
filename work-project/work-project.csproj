@@ -43,8 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Lists.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles.Common\Employee.cs" />
+    <Compile Include="Roles\CEO.cs" />
+    <Compile Include="Roles\DEV.cs" />
+    <Compile Include="Roles.Common\Person.cs" />
+    <Compile Include="Roles\DSNR.cs" />
+    <Compile Include="Roles\PM.cs" />
+    <Compile Include="Roles\ST.cs" />
+    <Compile Include="Validation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
