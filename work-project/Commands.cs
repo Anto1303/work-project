@@ -61,7 +61,7 @@ namespace work_project
 
                     dev.Project = Validation.ReadNonEmptyString("Project name: ");
 
-                    string s = Validation.ReadNonEmptyString("Is student? yes/no");
+                    string s = Validation.ReadNonEmptyString("Is student? yes/no ");
                     
                     if (s == "yes")
                     {
@@ -87,7 +87,7 @@ namespace work_project
 
                     dsnr.Project = Validation.ReadNonEmptyString("Project name: ");
 
-                    s = Validation.ReadNonEmptyString("Can draw? yes/no");
+                    s = Validation.ReadNonEmptyString("Can draw? yes/no ");
 
                     if (s == "yes")
                     {
@@ -114,7 +114,7 @@ namespace work_project
 
                     st.Project = Validation.ReadNonEmptyString("Project name: ");
 
-                    s = Validation.ReadNonEmptyString("Uses automated tests? yes/no");
+                    s = Validation.ReadNonEmptyString("Uses automated tests? yes/no ");
                     
                     if (s == "yes")
                     {
@@ -128,7 +128,7 @@ namespace work_project
                     break;
 
                 default:
-                    Console.WriteLine("Error");
+                    Console.WriteLine("Error - role doesnt exist.");
                     break;
             }
         }

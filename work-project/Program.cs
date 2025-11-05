@@ -19,7 +19,7 @@ namespace work_project
 
             while (exit == false)
             {
-                Console.WriteLine("Type \"help\" to display available commands");
+                Console.WriteLine("Type \"help\" to display available commands\n");
                 Console.Write("Command: ");
 
                 string input = Console.ReadLine();
@@ -81,7 +81,7 @@ namespace work_project
                         break;
 
                     default:
-                        Console.WriteLine("Error");
+                        Console.WriteLine("Error - command doesnt exist.\n");
                         break;
                 }
 
