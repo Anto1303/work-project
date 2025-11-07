@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace work_project.Roles.Common
 {
-    public abstract class Employee : Person
+    public interface IProject
     {
-        public string Project { get; set; }
+        string ProjectName { get; set; }
     }
 }

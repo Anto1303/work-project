@@ -36,12 +36,12 @@ namespace work_project
                         break;
 
                     case "add":
-                        string Role = Validation.ReadNonEmptyString("Enter role: ");
+                        string Role = InputValidation.ReadNonEmptyString("Enter role: ");
                         Commands.Add(Role);
                         break;
 
                     case "remove":
-                        Role = Validation.ReadNonEmptyString("Enter role to remove: ");
+                        Role = InputValidation.ReadNonEmptyString("Enter role to remove: ");
                         Commands.Remove(Role);
                         break;
                         

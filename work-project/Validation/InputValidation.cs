@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace work_project
 {
-    public class Validation
+    public class InputValidation
     {
         public static string ReadNonEmptyString(string prompt)
         {

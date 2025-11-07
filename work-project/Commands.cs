@@ -20,13 +20,13 @@ namespace work_project
 
                     CEO ceo = new CEO();
 
-                    ceo.FirstName = Validation.ReadNonEmptyString("First name: ");
+                    ceo.FirstName = InputValidation.ReadNonEmptyString("First name: ");
 
-                    ceo.LastName = Validation.ReadNonEmptyString("Last name: ");
+                    ceo.LastName = InputValidation.ReadNonEmptyString("Last name: ");
 
-                    ceo.Age = Validation.ReadInt("Age: ");
+                    ceo.Age = InputValidation.ReadInt("Age: ");
 
-                    ceo.CeoYears = Validation.ReadInt("Years being CEO: ");
+                    ceo.CeoYears = InputValidation.ReadInt("Years being CEO: ");
 
                     lists.CEOs.Add(ceo);
 
@@ -37,13 +37,13 @@ namespace work_project
                 case "pm":
                     PM pm = new PM();
 
-                    pm.FirstName = Validation.ReadNonEmptyString("First name: ");
+                    pm.FirstName = InputValidation.ReadNonEmptyString("First name: ");
 
-                    pm.LastName = Validation.ReadNonEmptyString("Last name: ");
+                    pm.LastName = InputValidation.ReadNonEmptyString("Last name: ");
 
-                    pm.Age = Validation.ReadInt("Age: ");
+                    pm.Age = InputValidation.ReadInt("Age: ");
 
-                    pm.Project = Validation.ReadNonEmptyString("Project name: ");
+                    pm.ProjectName = InputValidation.ReadNonEmptyString("Project name: ");
 
                     lists.PMs.Add(pm);
 
@@ -53,15 +53,15 @@ namespace work_project
                 case "dev":
                     DEV dev = new DEV();
 
-                    dev.FirstName = Validation.ReadNonEmptyString("First name: ");
+                    dev.FirstName = InputValidation.ReadNonEmptyString("First name: ");
 
-                    dev.LastName = Validation.ReadNonEmptyString("Last name: ");
+                    dev.LastName = InputValidation.ReadNonEmptyString("Last name: ");
 
-                    dev.Age = Validation.ReadInt("Age: ");
+                    dev.Age = InputValidation.ReadInt("Age: ");
 
-                    dev.Project = Validation.ReadNonEmptyString("Project name: ");
+                    dev.ProjectName = InputValidation.ReadNonEmptyString("Project name: ");
 
-                    string s = Validation.ReadNonEmptyString("Is student? yes/no ");
+                    string s = InputValidation.ReadNonEmptyString("Is student? yes/no ");
                     
                     if (s == "yes")
                     {
@@ -79,15 +79,15 @@ namespace work_project
                 case "dsnr":
                     DSNR dsnr = new DSNR();
 
-                    dsnr.FirstName = Validation.ReadNonEmptyString("First name: ");
+                    dsnr.FirstName = InputValidation.ReadNonEmptyString("First name: ");
 
-                    dsnr.LastName = Validation.ReadNonEmptyString("Last name: ");
+                    dsnr.LastName = InputValidation.ReadNonEmptyString("Last name: ");
 
-                    dsnr.Age = Validation.ReadInt("Age: ");
+                    dsnr.Age = InputValidation.ReadInt("Age: ");
 
-                    dsnr.Project = Validation.ReadNonEmptyString("Project name: ");
+                    dsnr.ProjectName = InputValidation.ReadNonEmptyString("Project name: ");
 
-                    s = Validation.ReadNonEmptyString("Can draw? yes/no ");
+                    s = InputValidation.ReadNonEmptyString("Can draw? yes/no ");
 
                     if (s == "yes")
                     {
@@ -106,15 +106,15 @@ namespace work_project
                 case "st":
                     ST st = new ST();
 
-                    st.FirstName = Validation.ReadNonEmptyString("First name: ");
+                    st.FirstName = InputValidation.ReadNonEmptyString("First name: ");
 
-                    st.LastName = Validation.ReadNonEmptyString("Last name: ");
+                    st.LastName = InputValidation.ReadNonEmptyString("Last name: ");
 
-                    st.Age = Validation.ReadInt("Age: ");
+                    st.Age = InputValidation.ReadInt("Age: ");
 
-                    st.Project = Validation.ReadNonEmptyString("Project name: ");
+                    st.ProjectName = InputValidation.ReadNonEmptyString("Project name: ");
 
-                    s = Validation.ReadNonEmptyString("Uses automated tests? yes/no ");
+                    s = InputValidation.ReadNonEmptyString("Uses automated tests? yes/no ");
                     
                     if (s == "yes")
                     {
@@ -138,7 +138,7 @@ namespace work_project
             switch (role)
             {
                 case "ceo":
-                    string Name = Validation.ReadNonEmptyString("Enter first name to remove: ");
+                    string Name = InputValidation.ReadNonEmptyString("Enter first name to remove: ");
                     var CeoToRemove = lists.CEOs.FirstOrDefault(c => c.FirstName.ToLower() == Name);
                     if(CeoToRemove != null)
                     {
@@ -154,7 +154,7 @@ namespace work_project
 
                 case "projectmanager":
                 case "pm":
-                    Name = Validation.ReadNonEmptyString("Enter first name to remove: ");
+                    Name = InputValidation.ReadNonEmptyString("Enter first name to remove: ");
                     var PmToRemove = lists.PMs.FirstOrDefault(c => c.FirstName.ToLower() == Name);
                     if (PmToRemove != null)
                     {
@@ -170,7 +170,7 @@ namespace work_project
 
                 case "developer":
                 case "dev":
-                    Name = Validation.ReadNonEmptyString("Enter first name to remove: ");
+                    Name = InputValidation.ReadNonEmptyString("Enter first name to remove: ");
                     var DevToRemove = lists.PMs.FirstOrDefault(c => c.FirstName.ToLower() == Name);
                     if (DevToRemove != null)
                     {
@@ -185,7 +185,7 @@ namespace work_project
 
                 case "designer":
                 case "dsnr":
-                    Name = Validation.ReadNonEmptyString("Enter first name to remove: ");
+                    Name = InputValidation.ReadNonEmptyString("Enter first name to remove: ");
                     var DsnrToRemove = lists.PMs.FirstOrDefault(c => c.FirstName.ToLower() == Name);
                     if (DsnrToRemove != null)
                     {
@@ -200,7 +200,7 @@ namespace work_project
 
                 case "softwaretester":
                 case "st":
-                    Name = Validation.ReadNonEmptyString("Enter first name to remove: ");
+                    Name = InputValidation.ReadNonEmptyString("Enter first name to remove: ");
                     var StToRemove = lists.PMs.FirstOrDefault(c => c.FirstName.ToLower() == Name);
                     if (StToRemove != null)
                     {
