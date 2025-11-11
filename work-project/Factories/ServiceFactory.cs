@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using work_project.Factories.Common;
 using work_project.Services;
+using work_project.Common;
 using work_project.Storage;
 
 namespace work_project.Factories
 {
-    public class ServiceFactory
+    public class ServiceFactory : IServiceFactory
     {
         private readonly Storage.Storage storage;
 
@@ -64,7 +66,7 @@ namespace work_project.Factories
 
                     default:
                         Console.WriteLine("Role doesnt exist or incorrect wording\n");
-                        Common.Constants.Roles.ShowRoles();
+                        work_project.Common.Constants.Roles.ShowRoles();
                         break;
                 }
             }

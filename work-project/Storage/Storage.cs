@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using work_project.Roles;
+using work_project.Storage.Common;
 
 namespace work_project.Storage
 {
-    public class Storage
+    public class Storage : IStorage
     {
         public List<Employee> Employees { get; } = new List<Employee>();
         

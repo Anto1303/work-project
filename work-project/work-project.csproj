@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Factories.Common\IServiceFactory.cs" />
     <Compile Include="Factories\ServiceFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,12 +55,14 @@
     <Compile Include="Roles\DSNR.cs" />
     <Compile Include="Roles\PM.cs" />
     <Compile Include="Roles\ST.cs" />
+    <Compile Include="Services.Common\IBaseService.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\CEOService.cs" />
     <Compile Include="Services\DEVService.cs" />
     <Compile Include="Services\DsnrService.cs" />
     <Compile Include="Services\PMService.cs" />
     <Compile Include="Services\STService.cs" />
+    <Compile Include="Storage.Common\IStorage.cs" />
     <Compile Include="Storage\Storage.cs" />
     <Compile Include="Validation\InputValidation.cs" />
   </ItemGroup>

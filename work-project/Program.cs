@@ -72,6 +72,10 @@ namespace work_project
                         baseService.RoleList(Common.Constants.Roles.St);
                         break;
 
+                    case "exit":
+                        exit = true;
+                        break;
+
                     default:
                         Console.WriteLine("Type help to see all available commands\n");
                         break;

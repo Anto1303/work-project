@@ -36,7 +36,7 @@ namespace work_project
             }
         }
 
-       public static  bool ReadBool(string prompt)
+       public static bool ReadBool(string prompt)
         {
             while (true)
             {

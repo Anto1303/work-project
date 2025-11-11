@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using work_project.Common;
 using work_project.Roles;
+using work_project.Services.Common;
 using work_project.Storage;
 
 
 namespace work_project.Services
 {
-    public class BaseService<T> where T : Employee, new()
+    public class BaseService<T> : IBaseService<T> where T : Employee, new()
     {
         private readonly Storage.Storage storage;
 
@@ -53,9 +54,17 @@ namespace work_project.Services
 
         public void Display()
         {
-            foreach (var emp in storage.GetAll())
+            var emps = storage.GetAll();
+            if(emps.Count()  > 0)
             {
-                emp.WritePersonInfo();
+                foreach (var emp in emps)
+                {
+                    emp.WritePersonInfo();
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Employees have been added yet");
             }
         }
 
@@ -63,9 +72,16 @@ namespace work_project.Services
         {
             var nonCeoEmployees = storage.GetNonCeo();
 
-            foreach (var emp in nonCeoEmployees)
+            if(nonCeoEmployees.Count() > 0)
             {
-                emp.WritePersonInfo();
+                foreach (var emp in nonCeoEmployees)
+                {
+                    emp.WritePersonInfo();
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Employees have been added yet");
             }
         }
 

@@ -15,8 +15,9 @@ namespace work_project.Common
             public const string Display = "display";
             public const string List = "list";
             public const string RoleList = "<role_name>list";
+            public const string Exit = "exit";
 
-            public static readonly List<string> AllCmds = new List<string>() { Add, Remove, Display, List, RoleList };
+            public static readonly List<string> AllCmds = new List<string>() { Add, Remove, Display, List, RoleList, Exit };
 
             public static void ShowCommands()
             {
