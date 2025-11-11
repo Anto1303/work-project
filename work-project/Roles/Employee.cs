@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace work_project.Roles
 {
-    public abstract class Employee
+    public class Employee
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Role { get; set; }
@@ -16,7 +16,7 @@ namespace work_project.Roles
 
         public virtual void WritePersonInfo()
         {
-            Console.WriteLine($"{Role}, {FirstName} {LastName}, star {Age} godina");
+            Console.Write($"\n{Role}, {FirstName} {LastName}, star {Age} godina");
         }
     }
 }

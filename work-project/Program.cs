@@ -8,6 +8,9 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using work_project.Roles;
+using work_project.Services;
+using work_project.Storage;
+using static work_project.Common.Constants;
 
 namespace work_project
 {
@@ -15,76 +18,65 @@ namespace work_project
     {
         static void Main(string[] args)
         {
+            var storage = new Storage.Storage();
+
+            var serviceFactory = new Factories.ServiceFactory(storage);
+
+            var baseService = new BaseService<Employee>(storage);
+
             bool exit = false;
+
+            Common.Constants.Commands.ShowCommands();
 
             while (exit == false)
             {
-                Console.WriteLine("Type \"help\" to display available commands\n");
-                Console.Write("Command: ");
+                string input = InputValidation.ReadNonEmptyString("Command: ").ToLower();
 
-                string input = Console.ReadLine();
-
-                switch (input.ToLower())
+                switch (input)
                 {
                     case "help":
-                        Console.WriteLine("\nAvailable commands:");
-                        Console.WriteLine("  add     - Add a new role(CEO, ProjectManager or PM, Developer or DEV, Designer or DSNR and SoftwareTester or ST)");
-                        Console.WriteLine("  remove  - Remove an existing role");
-                        Console.WriteLine("  display - Display all roles");
-                        Console.WriteLine("  list    - List available commands");
-                        Console.WriteLine(" (ceo/pm/dev/dsnr/st)list - Display all employees in a role");
+                        Common.Constants.Commands.ShowCommands();
                         break;
 
                     case "add":
-                        string Role = InputValidation.ReadNonEmptyString("Enter role: ");
-                        Commands.Add(Role);
+                        Common.Constants.Roles.ShowRoles();
+                        serviceFactory.SelectService();
                         break;
 
-                    case "remove":
-                        Role = InputValidation.ReadNonEmptyString("Enter role to remove: ");
-                        Commands.Remove(Role);
-                        break;
-                        
-                    case "display":
-                        bool showCeo = true;
-                        Commands.Display(showCeo);
+                    case "remove": baseService.Remove();
                         break;
 
-                    case "list":
-                        showCeo = false;
-                        Commands.Display(showCeo);
+                    case "display": baseService.Display();
+                        break;
+
+                    case "list": baseService.List(); 
                         break;
 
                     case "ceolist":
-                        string listrole = "ceo";
-                        Commands.DisplayRole(listrole);
+                        baseService.RoleList(Common.Constants.Roles.Ceo);
                         break;
 
                     case "pmlist":
-                        listrole = "pm";
-                        Commands.DisplayRole(listrole);
+                        baseService.RoleList(Common.Constants.Roles.Pm);
                         break;
 
                     case "devlist":
-                        listrole = "dev";
-                        Commands.DisplayRole(listrole);
+                        baseService.RoleList(Common.Constants.Roles.Dev);
                         break;
 
                     case "dsnrlist":
-                        listrole = "dsnr";
-                        Commands.DisplayRole(listrole);
+                        baseService.RoleList(Common.Constants.Roles.Dsnr);
                         break;
 
                     case "stlist":
-                        listrole = "stlist";
-                        Commands.DisplayRole(listrole);
+                        baseService.RoleList(Common.Constants.Roles.St);
                         break;
 
                     default:
-                        Console.WriteLine("Error - command doesnt exist.\n");
+                        Console.WriteLine("Type help to see all available commands\n");
                         break;
-                }
 
+                }
             }
 
         }

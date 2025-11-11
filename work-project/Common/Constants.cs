@@ -30,12 +30,17 @@ namespace work_project.Common
         public static class Roles
         {
             public const string Ceo = "ceo";
-            public const string Pm = "project manager/pm";
-            public const string Dev = "developer/dev";
-            public const string Dsnr = "designer/dsnr";
-            public const string St = "software tester/st";
+            public const string Pm = "pm";
+            public const string Dev = "dev";
+            public const string Dsnr = "dsnr";
+            public const string St = "st";
 
-            public static readonly List<string> AllRoles = new List<string>() { Ceo, Pm, Dev, Dsnr, St };
+            private const string Pm2 = "project manager/pm";
+            private const string Dev2 = "developer/dev";
+            private const string Dsnr2 = "designer/dsnr";
+            private const string St2 = "software tester/st";
+
+            private static readonly List<string> AllRoles = new List<string>() { Ceo, Pm2, Dev2, Dsnr2, St2 };
             
             public static void ShowRoles()
             {

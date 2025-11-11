@@ -15,10 +15,11 @@ namespace work_project
             {
                 Console.Write(prompt);
                 input = Console.ReadLine();
+                Console.Write("\n");
                 if (string.IsNullOrWhiteSpace(input))
                     Console.WriteLine("Input cannot be empty. Try again.");
             } while (string.IsNullOrWhiteSpace(input));
-            return input.ToLower();
+            return input;
         }
 
         public static int ReadInt(string prompt)
@@ -28,6 +29,7 @@ namespace work_project
             {
                 Console.Write(prompt);
                 string input = Console.ReadLine();
+                Console.Write("\n");
                 if (int.TryParse(input, out result))
                     return result;
                 Console.WriteLine("Invalid number. Try again.");
@@ -38,8 +40,9 @@ namespace work_project
         {
             while (true)
             {
-                Console.Write(prompt + " (y/n): ");
+                Console.Write(prompt);
                 string input = Console.ReadLine()?.Trim().ToLower();
+                Console.Write("\n");
 
                 if (input == "y" || input == "yes")
                     return true;
