@@ -35,31 +35,31 @@ namespace work_project.Factories
 
                 switch (role)
                 {
-                    case "ceo":
+                    case Constants.Roles.Ceo:
                         ceoService.Add(role);
                         IsRunning = false;
                         break;
 
-                    case "pm":
-                    case "project manager":
+                    case Constants.Roles.Pm:
+                    case Constants.Roles.PmFull:
                         pmService.Add(role);
                         IsRunning = false;
                         break;
 
-                    case "dev":
-                    case "developer":
+                    case Constants.Roles.Dev:
+                    case Constants.Roles.DevFull:
                         devService.Add(role);
                         IsRunning = false;
                         break;
 
-                    case "dsnr":
-                    case "designer":
+                    case Constants.Roles.Dsnr:
+                    case Constants.Roles.DsnrFull:
                         dsnrService.Add(role);
                         IsRunning = false;
                         break;
 
-                    case "st":
-                    case "software tester":
+                    case Constants.Roles.St:
+                    case Constants.Roles.StFull:
                         stService.Add(role);
                         IsRunning = false;
                         break;

@@ -18,14 +18,15 @@ namespace work_project.Services
 
         public override void Add(string role)
         {
-            DSNR emp = new DSNR();
-
-            emp.Role = role;
-            emp.FirstName = InputValidation.ReadNonEmptyString("First name: ");
-            emp.LastName = InputValidation.ReadNonEmptyString("Last name: ");
-            emp.Age = InputValidation.ReadInt("Age: ");
-            emp.ProjectName = InputValidation.ReadNonEmptyString("Project name: ");
-            emp.CanDraw = InputValidation.ReadBool("Can draw? yes/no: ");
+            DSNR emp = new DSNR
+            {
+                Role = role,
+                FirstName = InputValidation.ReadNonEmptyString("First name: "),
+                LastName = InputValidation.ReadNonEmptyString("Last name: "),
+                Age = InputValidation.ReadAge("Age: "),
+                ProjectName = InputValidation.ReadNonEmptyString("Project name: "),
+                CanDraw = InputValidation.ReadBool("Can draw? yes/no: ")
+            };
 
             storage.Add(emp);
             Console.WriteLine($"{emp.FirstName} added successfully\n");

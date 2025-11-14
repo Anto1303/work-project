@@ -7,6 +7,7 @@ using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using work_project.Common;
 using work_project.Roles;
 using work_project.Services;
 using work_project.Storage;
@@ -24,65 +25,9 @@ namespace work_project
 
             var baseService = new BaseService<Employee>(storage);
 
-            bool exit = false;
-
             Common.Constants.Commands.ShowCommands();
 
-            while (exit == false)
-            {
-                string input = InputValidation.ReadNonEmptyString("Command: ").ToLower();
-
-                switch (input)
-                {
-                    case "help":
-                        Common.Constants.Commands.ShowCommands();
-                        break;
-
-                    case "add":
-                        Common.Constants.Roles.ShowRoles();
-                        serviceFactory.SelectService();
-                        break;
-
-                    case "remove": baseService.Remove();
-                        break;
-
-                    case "display": baseService.Display();
-                        break;
-
-                    case "list": baseService.List(); 
-                        break;
-
-                    case "ceolist":
-                        baseService.RoleList(Common.Constants.Roles.Ceo);
-                        break;
-
-                    case "pmlist":
-                        baseService.RoleList(Common.Constants.Roles.Pm);
-                        break;
-
-                    case "devlist":
-                        baseService.RoleList(Common.Constants.Roles.Dev);
-                        break;
-
-                    case "dsnrlist":
-                        baseService.RoleList(Common.Constants.Roles.Dsnr);
-                        break;
-
-                    case "stlist":
-                        baseService.RoleList(Common.Constants.Roles.St);
-                        break;
-
-                    case "exit":
-                        exit = true;
-                        break;
-
-                    default:
-                        Console.WriteLine("Type help to see all available commands\n");
-                        break;
-
-                }
-            }
-
+            Constants.Commands.SelectCommand(serviceFactory, baseService);
         }
 
     }

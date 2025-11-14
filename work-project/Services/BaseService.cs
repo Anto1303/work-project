@@ -23,12 +23,13 @@ namespace work_project.Services
 
         public virtual void Add(string role)
         {
-            T emp = new T();
-
-            emp.Role = role;
-            emp.FirstName = InputValidation.ReadNonEmptyString("First name: ");
-            emp.LastName = InputValidation.ReadNonEmptyString("Last name: ");
-            emp.Age = InputValidation.ReadInt("Age: ");
+            T emp = new T
+            {
+                Role = role,
+                FirstName = InputValidation.ReadNonEmptyString("First name: "),
+                LastName = InputValidation.ReadNonEmptyString("Last name: "),
+                Age = InputValidation.ReadAge("Age: ")
+            };
 
             storage.Add(emp);
             Console.WriteLine($"{emp.FirstName} added successfully\n");
@@ -61,11 +62,14 @@ namespace work_project.Services
                 {
                     emp.WritePersonInfo();
                 }
+
+                Console.Write("\n");
             }
             else
             {
                 Console.WriteLine("No Employees have been added yet");
             }
+            Console.Write("\n");
         }
 
         public void List()
@@ -78,11 +82,14 @@ namespace work_project.Services
                 {
                     emp.WritePersonInfo();
                 }
+
+                Console.Write("\n");
             }
             else
             {
                 Console.WriteLine("No Employees have been added yet");
             }
+            Console.Write("\n");
         }
 
         public void RoleList (string role)
@@ -98,7 +105,7 @@ namespace work_project.Services
             }
             else
             {
-                Console.WriteLine($"No {role} found");
+                Console.WriteLine($"No {role} found\n");
             }
 
         }

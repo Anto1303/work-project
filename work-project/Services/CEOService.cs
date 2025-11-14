@@ -26,13 +26,14 @@ namespace work_project.Services
                 return;
             }
 
-            CEO emp = new CEO();
-
-            emp.Role = role;
-            emp.FirstName = InputValidation.ReadNonEmptyString("First name: ");
-            emp.LastName = InputValidation.ReadNonEmptyString("Last name: ");
-            emp.Age = InputValidation.ReadInt("Age: ");
-            emp.CeoYears = InputValidation.ReadInt("Years working as CEO: ");
+            CEO emp = new CEO
+            {
+                Role = role,
+                FirstName = InputValidation.ReadNonEmptyString("First name: "),
+                LastName = InputValidation.ReadNonEmptyString("Last name: "),
+                Age = InputValidation.ReadAge("Age: "),
+                CeoYears = InputValidation.ReadInt("Years working as CEO: ")
+            };
 
             storage.Add(emp);
             Console.WriteLine($"{emp.FirstName} added successfully\n");
