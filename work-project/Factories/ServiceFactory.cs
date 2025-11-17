@@ -66,7 +66,7 @@ namespace work_project.Factories
 
                     default:
                         Console.WriteLine("Role doesnt exist or incorrect wording\n");
-                        work_project.Common.Constants.Roles.ShowRoles();
+                        Constants.Roles.ShowRoles();
                         break;
                 }
             }

@@ -29,8 +29,8 @@ namespace work_project
                 Console.Write(prompt);
                 string input = Console.ReadLine();
                 Console.Write("\n");
-                if (int.TryParse(input, out int result)) //TryParse je slican kao i parse ali tryparse ako uspije daje true a ako ne uspije napraviti konverziju vraca false.
-                    return result;                   //Parse kad ne uspije napraviti konverziju daje error i ne vraca bool.
+                if (int.TryParse(input, out int result))  //TryParse je slican kao i parse ali tryparse ako uspije daje true a ako ne uspije napraviti konverziju vraca false.
+                    return result;                        //Parse kad ne uspije napraviti konverziju daje error i ne vraca bool.
                 Console.WriteLine("Invalid number. Try again.\n");
             }
         }
@@ -59,12 +59,11 @@ namespace work_project
                 Console.Write(prompt);
                 string input = Console.ReadLine();
                 Console.Write("\n");
-                if (int.TryParse(input, out int result))
+                if (int.TryParse(input, out int age))
                 {
-                    int age = result;
                     if(age > 18 && age < 65)
                     {
-                        return result;
+                        return age;
                     }
                     else
                     {

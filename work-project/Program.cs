@@ -25,9 +25,9 @@ namespace work_project
 
             var baseService = new BaseService<Employee>(storage);
 
-            Common.Constants.Commands.ShowCommands();
+            Commands.ShowCommands();
 
-            Constants.Commands.SelectCommand(serviceFactory, baseService);
+            Commands.SelectCommand(serviceFactory, baseService);
         }
 
     }
